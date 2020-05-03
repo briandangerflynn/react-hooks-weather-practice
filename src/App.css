@@ -1,6 +1,15 @@
+/* general styles */
 body {
   text-align: center;
   margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+/* header styles */
+header {
+  height: 100px;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -8,24 +17,64 @@ h1 {
   padding: 30px 0;
 }
 
-header {
-  height: 100px;
-  margin-bottom: 30px;
+input {
+  min-width: 200px;
+  min-height: 30px;
+  padding: 0 0 0 5px;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-main {
-  min-height: 100vh;
+header button {
+  background-color: lightblue;
+  display: inline-block;
+  min-height: 30px;
+  min-width: 90px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* nav styles */
+nav {
+  width: 400px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav div {
+  width: 120px
 }
 
 .left-button {
+  width: 60px;
   border-radius: 5px 0 0 5px;
 }
 
 .right-button {
+  width: 60px;
   border-radius: 0 5px 5px 0;
-  margin-right: 5px;
 }
 
 .active {
   background-color: lightblue;;
+}
+
+
+/* main styles */
+main {
+  min-height: 100vh;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.weather-card {
+  border: 1px solid;
+  width: 180px;
 }

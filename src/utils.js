@@ -1,7 +1,6 @@
 import axios from "axios";
 const API_KEY = "b7375b0327142d3b2088dd8bfe0cff37";
 
-
 const fetchWeather = async (cityName, units) => {
   const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=${units}`)
 
@@ -16,20 +15,17 @@ const fetchWeather = async (cityName, units) => {
 
 const fetchForecast = async cityName => {
   const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=${API_KEY}&units=imperial`)
-  const forecast = response.data.list
+  const forecastData = response.data.list
+  const forecast = forecastData.map(day => ({
+    main: day.weather[0].main,
+    description: day.weather[0].description,
+    icon: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
+    temp: Math.round(day.temp.max)
+  }))
   return forecast
 }
-
 
 export {
   fetchWeather,
   fetchForecast
 }
-
-
-  // const forecast = {
-  //   main: forecastData.weather[0].main,
-  //   description: forecastData.weather[0].description,
-  //   icon: `http://openweathermap.org/img/wn/${forecastData.weather[0].icon}@2x.png`,
-  //   temp: Math.round(forecastData.temp.max)
-  // }

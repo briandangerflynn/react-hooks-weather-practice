@@ -5,6 +5,8 @@ const initialState = {
   units: "imperial",
   cityName: "",
   weather: null,
+  fetchType: "current",
+  forecast: [],
   theme: "light"
 }
 
