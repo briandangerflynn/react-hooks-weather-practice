@@ -14,7 +14,6 @@ export default function Nav(props) {
     setFunc(e.target.id)
   }
 
-
   return (
     <nav>
       <button
