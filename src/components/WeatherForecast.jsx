@@ -6,8 +6,6 @@ export default function WeatherForecast() {
   const { cityName, units, forecast } = state;
   const unitsSymbol = units === "imperial" ? "F" : "C";
 
-  console.log(forecast)
-
   return (
     <div className="forecast">
       {

@@ -33,6 +33,7 @@ function App() {
   }
 
   useEffect(() => {
+    console.log("useEffect", units)
     const lastSearch = document.location.hash.slice(1).replace(/%20/g, " ")
     if (lastSearch) {
       dispatch({ type: "SET_CITY_NAME", cityName: lastSearch })

@@ -13,8 +13,8 @@ const fetchWeather = async (cityName, units) => {
   return weather
 };
 
-const fetchForecast = async cityName => {
-  const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=${API_KEY}&units=imperial`)
+const fetchForecast = async (cityName, units) => {
+  const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&cnt=5&appid=${API_KEY}&units=${units}`)
   const forecastData = response.data.list
   const forecast = forecastData.map(day => ({
     main: day.weather[0].main,
